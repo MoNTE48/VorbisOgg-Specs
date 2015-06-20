@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
                      "-Wno-conversion",
                      "-Wno-unused-variable",
                      "-Wno-unused-function"
-  s.source_files = "src",
+  s.source_files = "lib",
                    "include/**/*.h"
   s.exclude_files = "lib/psytune.c" # dead code that doesn't compile
   s.public_header_files = "include/**/*.h"
