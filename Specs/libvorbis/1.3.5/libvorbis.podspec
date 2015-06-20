@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                      :sha1 => sha1 }
 
   s.compiler_flags = "-O3",
-                     "-iquote \"$PODS_ROOT/Vorbis/lib\"", # hack for use of #include "foo/bar" in subdirs relative to base dir
+                     "-iquote \"$PODS_ROOT/libvorbis/lib\"", # hack for use of #include "foo/bar" in subdirs relative to base dir
                      "-Wno-conversion",
                      "-Wno-unused-variable",
                      "-Wno-unused-function"
