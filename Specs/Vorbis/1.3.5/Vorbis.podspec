@@ -27,15 +27,22 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
+  # hack for use of #include "foo/bar" in subdirs to refer to base dir
+  s.prepare_command = <<-CMD
+                      test -e lib/modes/modes || ln -s ../modes lib/modes/modes
+                      test -e lib/modes/books || ln -s ../books lib/modes/books
+                      CMD
+
   s.compiler_flags = "-O3",
                      "-Wno-conversion",
                      "-Wno-unused-variable",
                      "-Wno-unused-function"
+
   s.source_files = "lib",
-                   "lib/modes",
-                   "lib/books",
                    "include/**/*.h"
-  s.exclude_files = "lib/psytune.c" # dead code that doesn't compile
+  s.exclude_files = "lib/psytune.c", # dead code that doesn't compile
+                    "lib/tone.c", # test prog?
+                    "lib/barkmel.c" # test prog?
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
