@@ -6,12 +6,12 @@ Pod::Spec.new do |s|
   source = "http://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
   sha1 = "7b4cdd4a73fadfed457ae40984cb0cc91146b300"
 
-  s.name         = "Vorbis"
+  s.name         = "libvorbis"
   s.version      = ver
-  s.summary      = "libvorbis audio codec library"
+  s.summary      = "Low-level Vorbis audio codec library"
 
   s.description  = <<-DESC
-                   Xiph's Vorbis audio codec library, packaged for iOS.
+                   Xiph's C-based Vorbis audio codec library, packaged for iOS.
                    Needed for decoding or encoding of audio in Ogg and WebM media.
                    DESC
 
@@ -41,5 +41,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
-  s.dependency 'Ogg', '>=1.0'
+  s.dependency 'libogg', '>=1.0'
 end
