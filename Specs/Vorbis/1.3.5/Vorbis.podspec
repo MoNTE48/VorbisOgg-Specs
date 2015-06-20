@@ -27,10 +27,10 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
-  # hack for use of #include "foo/bar" in subdirs to refer to base dir
+  # hack for use of #include "foo/bar" in subdirs relative to base dir
   s.prepare_command = <<-CMD
-                      test -e lib/modes/modes || ln -s ../modes lib/modes/modes
-                      test -e lib/modes/books || ln -s ../books lib/modes/books
+                      test -e lib/modes/modes || cp -pr ../modes lib/modes/modes
+                      test -e lib/modes/books || ln -pr ../books lib/modes/books
                       CMD
 
   s.compiler_flags = "-O3",
