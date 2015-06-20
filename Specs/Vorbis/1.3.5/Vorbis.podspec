@@ -27,22 +27,17 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
-  # hack for use of #include "foo/bar" in subdirs relative to base dir
-  s.prepare_command = <<-CMD
-                      test -e lib/modes/modes || cp -pr ../modes lib/modes/modes
-                      test -e lib/modes/books || ln -pr ../books lib/modes/books
-                      CMD
-
   s.compiler_flags = "-O3",
+                     "-iquote \"$PODS_ROOT/Vorbis/lib\"", # hack for use of #include "foo/bar" in subdirs relative to base dir
                      "-Wno-conversion",
                      "-Wno-unused-variable",
                      "-Wno-unused-function"
 
-  s.source_files = "lib",
+  s.source_files = "lib/**/*.{c,h}",
                    "include/**/*.h"
   s.exclude_files = "lib/psytune.c", # dead code that doesn't compile
-                    "lib/tone.c", # test prog?
-                    "lib/barkmel.c" # test prog?
+                    "lib/tone.c",    # test util
+                    "lib/barkmel.c"  # test util
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
