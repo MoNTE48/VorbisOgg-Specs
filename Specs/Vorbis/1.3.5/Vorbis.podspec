@@ -31,10 +31,10 @@ Pod::Spec.new do |s|
                      "-Wno-conversion",
                      "-Wno-unused-variable",
                      "-Wno-unused-function"
-  s.source_files = libver + "/src",
-                   libver + "/include/**/*.h"
-  s.exclude_files = libver + "/lib/psytune.c" # dead code that doesn't compile
-  s.public_header_files = libver + "/include/**/*.h"
+  s.source_files = "src",
+                   "include/**/*.h"
+  s.exclude_files = "lib/psytune.c" # dead code that doesn't compile
+  s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
   s.dependency 'Ogg', '>=1.0'
