@@ -27,6 +27,20 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
+  s.prepare_command = <<-'CMD'
+                      echo 'framework module vorbis {' > vorbis.modulemap
+                      echo '  umbrella header "vorbis.h"' >> vorbis.modulemap
+                      echo '  module vorbisfile {' >> vorbis.modulemap
+                      echo '    header "vorbisfile.h"' >> vorbis.modulemap
+                      echo '    export *' >> vorbis.modulemap
+                      echo '  }' >> vorbis.modulemap
+                      echo '  module vorbisenc {' >> vorbis.modulemap
+                      echo '    header "vorbisenc.h"' >> vorbis.modulemap
+                      echo '    export *' >> vorbis.modulemap
+                      echo '  }' >> vorbis.modulemap
+                      echo '}' >> vorbis.modulemap
+                      CMD
+
   s.compiler_flags = "-O3",
                      "-iquote \"$PODS_ROOT/libvorbis/lib\"", # hack for use of #include "foo/bar" in subdirs relative to base dir
                      "-Wno-conversion",
@@ -40,7 +54,8 @@ Pod::Spec.new do |s|
                     "lib/barkmel.c"  # test util
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
-  s.module_map = "libogg.modulemap"
+  s.module_name = name
+  s.module_map = name + ".modulemap"
   
   s.dependency 'libogg', '>=1.0'
 end
