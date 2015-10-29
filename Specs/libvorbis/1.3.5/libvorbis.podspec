@@ -40,6 +40,7 @@ Pod::Spec.new do |s|
                     "lib/barkmel.c"  # test util
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_map = "libogg.modulemap"
   
   s.dependency 'libogg', '>=1.0'
 end
