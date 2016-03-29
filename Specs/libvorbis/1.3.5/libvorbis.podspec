@@ -29,7 +29,6 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-'CMD'
                       echo 'framework module vorbis {' > vorbis.modulemap
-                      echo '  umbrella header "vorbis.h"' >> vorbis.modulemap
                       echo '  module vorbisfile {' >> vorbis.modulemap
                       echo '    header "vorbisfile.h"' >> vorbis.modulemap
                       echo '    export *' >> vorbis.modulemap
@@ -56,6 +55,6 @@ Pod::Spec.new do |s|
   s.header_dir = name
   s.module_name = name
   s.module_map = name + ".modulemap"
-  
+
   s.dependency 'libogg', '>=1.0'
 end
