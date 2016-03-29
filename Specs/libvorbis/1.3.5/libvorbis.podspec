@@ -31,10 +31,12 @@ Pod::Spec.new do |s|
                       echo 'framework module vorbis {' > vorbis.modulemap
                       echo '  module vorbisfile {' >> vorbis.modulemap
                       echo '    header "vorbisfile.h"' >> vorbis.modulemap
+                      echo '    header "codec.h"' >> vorbis.modulemap
                       echo '    export *' >> vorbis.modulemap
                       echo '  }' >> vorbis.modulemap
                       echo '  module vorbisenc {' >> vorbis.modulemap
                       echo '    header "vorbisenc.h"' >> vorbis.modulemap
+                      echo '    header "codec.h"' >> vorbis.modulemap
                       echo '    export *' >> vorbis.modulemap
                       echo '  }' >> vorbis.modulemap
                       echo '}' >> vorbis.modulemap
