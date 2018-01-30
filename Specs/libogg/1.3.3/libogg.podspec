@@ -2,9 +2,11 @@ Pod::Spec.new do |s|
   name = "ogg"
   libname = "lib" + name
   ver = "1.3.3"
-  libver = libname + "-" + ver
-  source = "https://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
-  sha1 = "ba54760b8f44bd85b79222286faf5d6a21e356fe"
+
+  # Switch back to tarball releases when future upstream release works cleanly
+  #libver = libname + "-" + ver
+  #source = "https://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
+  #sha1 = "ba54760b8f44bd85b79222286faf5d6a21e356fe"
 
   s.name         = "libogg"
   s.version      = ver
@@ -25,7 +27,7 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
   s.social_media_url   = "https://planet.xiph.org/"
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   # Uncomment once a release includes the patches for conversion warnings
   # and using sys/types.h...

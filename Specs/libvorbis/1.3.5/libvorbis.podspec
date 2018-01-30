@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   libname = "lib" + name
   ver = "1.3.5"
   libver = libname + "-" + ver
-  source = "http://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
+  source = "https://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
   sha1 = "7b4cdd4a73fadfed457ae40984cb0cc91146b300"
 
   s.name         = "libvorbis"
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
   s.social_media_url   = "https://planet.xiph.org/"
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :http => source,
                      :sha1 => sha1 }
@@ -46,7 +46,9 @@ Pod::Spec.new do |s|
                      "-iquote \"$PODS_ROOT/libvorbis/lib\"", # hack for use of #include "foo/bar" in subdirs relative to base dir
                      "-Wno-conversion",
                      "-Wno-unused-variable",
-                     "-Wno-unused-function"
+                     "-Wno-unused-function",
+                     "-Wno-documentation-deprecated-sync",
+                     "-Wno-shorten-64-to-32"
 
   s.source_files = "lib/**/*.{c,h}",
                    "include/**/*.h"
