@@ -42,7 +42,8 @@ Pod::Spec.new do |s|
                       echo '}' >> ogg.modulemap
                       CMD
 
-  s.compiler_flags = "-O3"
+  s.compiler_flags = "-O3",
+                     "-Wno-shorten-64-to-32"
   s.source_files = "src",
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
