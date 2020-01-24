@@ -22,8 +22,8 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
   s.social_media_url   = "https://planet.xiph.org/"
 
-  #s.platform     = :ios, "8.0"
-  #s.platform     = :osx, "10.8"
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
 
   s.source       = { :http => source,
                      :sha1 => sha1 }
