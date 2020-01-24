@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://planet.xiph.org/"
 
   s.platform     = :ios, "8.0"
+  s.osx.deployment_target = '10.8'
 
   s.source       = { :http => source,
                      :sha1 => sha1 }
