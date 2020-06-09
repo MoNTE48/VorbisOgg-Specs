@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.summary      = "Low-level Vorbis audio codec library"
 
   s.description  = <<-DESC
-                   Xiph's C-based Vorbis audio codec library, packaged for iOS.
+                   Xiph's C-based Vorbis audio codec library, packaged for iOS and macOS.
                    Needed for decoding or encoding of audio in Ogg and WebM media.
                    DESC
 
@@ -19,8 +19,7 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "BSD", :file => "COPYING" }
 
-  s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
-  s.social_media_url   = "https://planet.xiph.org/"
+  s.author       = { "Brion Vibber (packager)" => "brion@pobox.com" }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
